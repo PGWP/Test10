@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathBooks - 최고의 수학 문제집 추천</title>
+    <style>
+        /* 간단한 스타일 설정 */
+        body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f7f9; }
+        header { background: #334155; color: white; padding: 2rem; text-align: center; }
+        nav { background: #fff; padding: 10px; text-align: center; border-bottom: 1px solid #ddd; }
+        nav a { margin: 0 15px; text-decoration: none; color: #334155; font-weight: bold; }
+        
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        
+        /* 문제집 카드 스타일 */
+        .book-card { background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; }
+        .book-card:hover { transform: translateY(-5px); }
+        .book-image { width: 100%; height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8; }
+        .book-info { padding: 20px; }
+        .tag { background: #3b82f6; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8rem; }
+        h3 { margin: 10px 0; color: #1e293b; }
+        p { font-size: 0.9rem; color: #64748b; }
+        .btn { display: inline-block; background: #334155; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        
+        footer { text-align: center; padding: 40px; color: #94a3b8; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📐 MathBooks</h1>
+    <p>당신의 실력을 높여줄 최고의 수학 교재를 만나보세요</p>
+</header>
+
+<nav>
+    <a href="#">기초</a>
+    <a href="#">유형</a>
+    <a href="#">심화</a>
+    <a href="#">기출</a>
+</nav>
+
+<div class="container">
+    <div class="book-card">
+        <div class="book-image">이미지 준비중</div>
+        <div class="book-info">
+            <span class="tag">기초입문</span>
+            <h3>개념원리 수학(상)</h3>
+            <p>수학의 기초를 탄탄하게 잡아주는 국민 개념서. 처음 개념을 접하는 학생들에게 추천합니다.</p>
+            <a href="#" class="btn">상세보기</a>
+        </div>
+    </div>
+
+    <div class="book-card">
+        <div class="book-image">이미지 준비중</div>
+        <div class="book-info">
+            <span class="tag">유형학습</span>
+            <h3>쎈(SSEN) 고등 수학</h3>
+            <p>모든 유형의 문제를 한 권에! 내신 대비와 문제 풀이 양을 늘리고 싶은 학생들에게 필수입니다.</p>
+            <a href="#" class="btn">상세보기</a>
+        </div>
+    </div>
+
+    <div class="book-card">
+        <div class="book-image">이미지 준비중</div>
+        <div class="book-info">
+            <span class="tag">심화문제</span>
+            <h3>블랙라벨 수학</h3>
+            <p>상위 1%를 위한 고난도 문제집. 수능 1등급과 내신 만점을 목표로 한다면 도전하세요.</p>
+            <a href="#" class="btn">상세보기</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 MathBooks Recommendation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
