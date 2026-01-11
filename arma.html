@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>낙원 & 판데모니움 - 캐릭터 도감</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-blue: #3b82f6;
+            --accent-red: #ef4444;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+
+        body { font-family: 'Pretendard', sans-serif; background: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; }
+        header { background: linear-gradient(to bottom, #1e293b, #0f172a); padding: 40px 20px; text-align: center; border-bottom: 2px solid var(--accent-blue); }
+        
+        .section-title { text-align: center; margin: 40px 0 20px; color: var(--accent-blue); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
+
+        /* 캐릭터 카드 스타일 */
+        .char-card { background: var(--card-bg); border-radius: 12px; padding: 15px; text-align: center; cursor: pointer; border: 1px solid #334155; transition: 0.3s; }
+        .char-card:hover { transform: translateY(-5px); border-color: var(--accent-blue); box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
+        .char-name { font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
+        .char-tag { font-size: 0.75rem; padding: 2px 8px; border-radius: 20px; background: #334155; color: #cbd5e1; }
+
+        /* 모달창 스타일 */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+        .modal-content { position: relative; background: var(--card-bg); margin: 10% auto; padding: 30px; width: 85%; max-width: 500px; border-radius: 20px; border: 1px solid var(--accent-blue); animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 25px; cursor: pointer; color: var(--text-sub); }
+        .modal-header { border-bottom: 1px solid #334155; padding-bottom: 15px; margin-bottom: 15px; }
+        .modal-title { font-size: 1.8rem; color: var(--accent-blue); margin: 0; }
+        .modal-body p { margin: 10px 0; line-height: 1.5; font-size: 0.95rem; }
+        .label { color: var(--accent-blue); font-weight: bold; margin-right: 5px; }
+
+        .type-villain { color: #f87171; }
+        .type-agent { color: #60a5fa; }
+        .type-remnant { color: #a78bfa; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>PARADISE & PANDEMONIUM</h1>
+    <p>낙원과 판데모니움의 기록 보관소</p>
+</header>
+
+<h2 class="section-title">VILLAIN</h2>
+<div class="container">
+    <div class="char-card" onclick="openModal('레이카', '빌런', '능글 맞은, 침착함, 광기, 지배욕', '복종의 사슬', '장난감 수집', '분홍빛 사슬로 자신보다 하등한 존재를 지배합니다.')">
+        <div class="char-name">레이카</div>
+        <span class="char-tag">빌런</span>
+    </div>
+    <div class="char-card" onclick="openModal('린', '빌런', '차가움, 고요, 은은한 광기', '수확자 / 저주 인형', '영혼 확보', '거대 낫과 짚 인형으로 영혼을 수확합니다.')">
+        <div class="char-name">린</div>
+        <span class="char-tag">빌런</span>
+    </div>
+    <div class="char-card" onclick="openModal('이안', '빌런 (카타르시스)', '담담함, 완벽주의', '마에스트로', '피날레 (세상의 끝)', '지휘장으로 충격파를 보내며 대상의 속도를 지휘합니다.')">
+        <div class="char-name">이안</div>
+        <span class="char-tag">빌런</span>
+    </div>
+</div>
+
+<h2 class="section-title">AGENT</h2>
+<div class="container">
+    <div class="char-card" onclick="openModal('렌', '에이전트', '정의로움, 용맹함', '하중 (거대 망치)', '네오젠 인터네셔널', '망치의 중력을 자유자재로 조절합니다.')">
+        <div class="char-name">렌</div>
+        <span class="char-tag">에이전트</span>
+    </div>
+    <div class="char-card" onclick="openModal('메디아', '에이전트', '다정, 희생적', '생명의 지팡이', '하이드라 코퍼레이션', '2m 내의 대상을 치유하거나 신체를 비틉니다.')">
+        <div class="char-name">메디아</div>
+        <span class="char-tag">에이전트</span>
+    </div>
+    <div class="char-card" onclick="openModal('레인', '에이전트', '과묵, 차가움', '별똥별 (저격총)', '네오젠 인터네셔널', '빛의 속도로 관통하는 푸른 탄환을 발사합니다.')">
+        <div class="char-name">레인</div>
+        <span class="char-tag">에이전트</span>
+    </div>
+</div>
+
+<h2 class="section-title">REMNANT</h2>
+<div class="container">
+    <div class="char-card" onclick="openModal('네크로', '아르마의 잔재', '무감정, 싸이코패스', '네크로노미콘 (램프)', '육체: 히키코모리', '죽은 자를 스스로 생각할 수 없는 존재로 부활시킵니다.')">
+        <div class="char-name">네크로</div>
+        <span class="char-tag">잔재</span>
+    </div>
+</div>
+
+<div id="charModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-header">
+            <h2 id="m-name" class="modal-title">이름</h2>
+            <small id="m-type" style="color: var(--text-sub)">소속</small>
+        </div>
+        <div class="modal-body">
+            <p><span class="label">성격:</span> <span id="m-personality"></span></p>
+            <p><span class="label">아르마:</span> <span id="m-arma"></span></p>
+            <p><span class="label">목표/후원:</span> <span id="m-goal"></span></p>
+            <p><span class="label">특징:</span> <span id="m-desc"></span></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal(name, type, personality, arma, goal, desc) {
+        document.getElementById('m-name').innerText = name;
+        document.getElementById('m-type').innerText = type;
+        document.getElementById('m-personality').innerText = personality;
+        document.getElementById('m-arma').innerText = arma;
+        document.getElementById('m-goal').innerText = goal;
+        document.getElementById('m-desc').innerText = desc;
+        document.getElementById('charModal').style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById('charModal').style.display = "none";
+    }
+
+    // 모달 바깥 클릭 시 닫기
+    window.onclick = function(event) {
+        let modal = document.getElementById('charModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
